@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #66ccff, #ff66cc);
+    animation: gradientAnimation 10s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(45deg, #66ccff, #ff66cc);
+    }
+    50% {
+        background: linear-gradient(45deg, #ff66cc, #66ccff);
+    }
+    100% {
+        background: linear-gradient(45deg, #66ccff, #ff66cc);
+    }
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeIn 1s forwards, scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    animation: slideInFromTop 1s ease-out;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 18px;
+    width: 80%;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    transform: scale(1.05);
+    border-color: #0056b3;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.weather-info {
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.weather-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    transform: translateX(-20px);
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
